@@ -1,6 +1,5 @@
 numpy==1.19.5
 requests==2.23.0
-torch
 pickleshare==0.7.5
 joblib==1.0.1
 torchvision
