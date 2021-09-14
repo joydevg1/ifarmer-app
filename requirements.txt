@@ -32,5 +32,5 @@ flask==1.1.4
 sklearn==0.0
 colabcode
 python-multipart
-https://download.pytorch.org/whl/cpu/torch-1.7.1%2Bcpu-cp39-cp39-linux_x86_64.whl
-https://download.pytorch.org/whl/cpu/torchvision-0.10.0%2Bcpu-cp39-cp39-linux_x86_64.whl
+pytorch-cpu
+torchvision-cpu
