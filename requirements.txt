@@ -49,9 +49,6 @@ termcolor==1.1.0
 pyngrok==5.1.0
 ipywidgets==7.6.3
 pandas==1.1.5
-starlette==0.14.2
-flatbuffers==1.12
-scipy==1.4.1
 torchvision
 flask==1.1.4
 sklearn==0.0
