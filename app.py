@@ -11,27 +11,16 @@ Original file is located at
 import os                       # for working with files
 import numpy as np              # for numerical computationss
 import pandas as pd             # for working with dataframes
-import matplotlib.pyplot as plt # for plotting informations on graph and images using tensors
 import json
 from PIL import Image
-from typing import List
-import io
-import sys
 from pydantic import BaseModel
-from tensorflow.keras.models import load_model
 import torch                    # Pytorch module 
-from torch.utils.data import DataLoader # for dataloaders
 import torchvision.transforms as transforms   # for transforming images into tensors 
-from torchvision.utils import make_grid       # for data checking
-from torchvision.datasets import ImageFolder  # for working with classes and images
-from torchsummary import summary              # for getting the summary of our model
 import torch.nn as nn
-import torch.nn.functional as F
 from fastapi import FastAPI, File, UploadFile, HTTPException
 from colabcode import ColabCode
 import pickle
 from fastapi.middleware.cors import CORSMiddleware
-# %matplotlib inline
 
 with open('crop_dict.json') as json_file:
     data1 = json.load(json_file)
