@@ -12,6 +12,7 @@ from fastapi import FastAPI, File, UploadFile, HTTPException
 from colabcode import ColabCode
 import pickle
 from fastapi.middleware.cors import CORSMiddleware
+from utils.model import ResNet9
 
 with open('crop_dict.json') as json_file:
     data1 = json.load(json_file)
