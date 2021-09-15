@@ -64,8 +64,10 @@ disease_classes = ['Apple___Apple_scab',
                    'Tomato___healthy']
 
 
-PATH = 'plant-disease-model-complete.pth'
-disease_model = torch.load(PATH,map_location ='cpu')
+
+disease_model = ResNet9(3, len(disease_classes))
+disease_model.load_state_dict(torch.load('state_dict.pth', map_location=torch.device('cpu')))
+
 def predict_image(img, model=disease_model):
     """
     Transforms image to tensor and predicts disease label
