@@ -20,22 +20,9 @@ with open('crop_dict.json') as json_file:
 app = FastAPI()
 #api = Api(app)
 
-PATH = 'plant-disease-model-complete.pth'
-disease_model = torch.load(PATH,map_location ='cpu')
+
 #model = pickle.load(open('cropped_model.pkl','rb'))
 
-def predict_image(img, model=disease_model):
-    """
-    Transforms image to tensor and predicts disease label
-    :params: image
-    :return: prediction (string)
-    """
-    yb = model(img)
-    # Pick index with highest probability
-    _, preds = torch.max(yb, dim=1)
-    prediction = disease_classes[preds[0].item()]
-    # Retrieve the class label
-    return prediction
 
 disease_classes = ['Apple___Apple_scab',
                    'Apple___Black_rot',
@@ -75,6 +62,23 @@ disease_classes = ['Apple___Apple_scab',
                    'Tomato___Tomato_Yellow_Leaf_Curl_Virus',
                    'Tomato___Tomato_mosaic_virus',
                    'Tomato___healthy']
+
+
+def predict_image(img, model=disease_model):
+    """
+    Transforms image to tensor and predicts disease label
+    :params: image
+    :return: prediction (string)
+    """
+    yb = model(img)
+    # Pick index with highest probability
+    _, preds = torch.max(yb, dim=1)
+    prediction = disease_classes[preds[0].item()]
+    # Retrieve the class label
+    return prediction
+
+PATH = 'plant-disease-model-complete.pth'
+disease_model = torch.load(PATH,map_location ='cpu')
 
 transform = transforms.Compose([
         transforms.Resize(256),
