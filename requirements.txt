@@ -35,3 +35,4 @@ python-multipart
 torch==1.7.1+cpu
 torchvision==0.8.2+cpu
 gunicorn
+uvloop
