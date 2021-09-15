@@ -75,7 +75,6 @@ disease_classes = ['Apple___Apple_scab',
                    'Tomato___Tomato_Yellow_Leaf_Curl_Virus',
                    'Tomato___Tomato_mosaic_virus',
                    'Tomato___healthy']
-PATH = 'plant-disease-model-complete.pth'
 
 transform = transforms.Compose([
         transforms.Resize(256),
