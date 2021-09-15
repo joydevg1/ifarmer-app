@@ -1,3 +1,7 @@
+import torch 
+import torch.nn as nn
+import torch.nn.functional as F
+
 def ConvBlock(in_channels, out_channels, pool=False):
     layers = [nn.Conv2d(in_channels, out_channels, kernel_size=3, padding=1),
              nn.BatchNorm2d(out_channels),
