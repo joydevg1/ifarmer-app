@@ -64,6 +64,8 @@ disease_classes = ['Apple___Apple_scab',
                    'Tomato___healthy']
 
 
+PATH = 'plant-disease-model-complete.pth'
+disease_model = torch.load(PATH,map_location ='cpu')
 def predict_image(img, model=disease_model):
     """
     Transforms image to tensor and predicts disease label
@@ -77,8 +79,7 @@ def predict_image(img, model=disease_model):
     # Retrieve the class label
     return prediction
 
-PATH = 'plant-disease-model-complete.pth'
-disease_model = torch.load(PATH,map_location ='cpu')
+
 
 transform = transforms.Compose([
         transforms.Resize(256),
