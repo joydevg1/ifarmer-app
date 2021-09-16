@@ -13,7 +13,6 @@ from colabcode import ColabCode
 import pickle
 from fastapi.middleware.cors import CORSMiddleware
 from utils.model import ResNet9
-import uvicorn
 
 with open('crop_dict.json') as json_file:
     data1 = json.load(json_file)
@@ -167,5 +166,3 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-if __name__ == "__main__": 
-    uvicorn.run(app)
