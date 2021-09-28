@@ -68,6 +68,7 @@ disease_classes = ['Apple___Apple_scab',
 
 disease_model = ResNet9(3, len(disease_classes))
 disease_model.load_state_dict(torch.load('state_dict.pth', map_location=torch.device('cpu')))
+disease_model.eval()
 
 def predict_image(img, model1=disease_model):
     """
